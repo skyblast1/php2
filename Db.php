@@ -7,13 +7,13 @@ class Db
 
     public function __construct()
     {
-        $this->dbh = new \PDO('pgsql:host=localhost;dbname=profit', 'profit', 'profit');
+        $this->dbh = new PDO('mysql:host=localhost;dbname=php2', 'root', 'root');
     }
 
-    public function query($sql, $class): array
+    public function query($sql, $class, $data): array
     {
         $sth = $this->dbh->prepare($sql);
-        $sth->execute();
+        $sth->execute($data);
         return $sth->fetchAll(PDO::FETCH_CLASS, $class);
     }
 

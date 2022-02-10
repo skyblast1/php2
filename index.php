@@ -7,7 +7,9 @@ spl_autoload_register(function ($class) {
     require __DIR__ . '/' . str_replace('\\', '/', $class) . '.php';
 });
 
-$data = Product::findAll();
+
+
+$data = Product::findById();
 var_dump($data);
 
 $data = User::findAll();
