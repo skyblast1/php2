@@ -10,11 +10,8 @@ spl_autoload_register(function ($class) {
 
 
 
-$data = Product::findById();
-var_dump($data);
-
-$data = User::findAll();
-var_dump($data);
 
 $data = News::findLast3();
 var_dump($data);
+
+include __DIR__ . '/templates/template.php';
